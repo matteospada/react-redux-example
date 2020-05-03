@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { mapDispatchToProps } from "./actions";
-import { getState } from "./selector";
+import { mapStateToProps } from "./selector";
+import { mapDispatchToProps } from './actions'
 
 
 function App({ button_pressed, click }  ) {
@@ -17,4 +17,4 @@ function App({ button_pressed, click }  ) {
   );
 }
 
-export default connect(getState, mapDispatchToProps )(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

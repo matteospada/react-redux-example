@@ -1,18 +1,17 @@
-const initialState = {
-    button_pressed: "no"
-  }
+import { createSlice } from '@reduxjs/toolkit'
 
 
-export function rootReducer(state = initialState, action) {
-    switch (action.type) {
-        case "CLICK":
-            if (state.button_pressed === "yes") { 
-                return {...initialState, button_pressed: "no"}
-            } 
-            else {
-                return {...initialState, button_pressed: "yes"}
-            }   
-        default:
+const slice = createSlice({
+    name: 'flag',
+    initialState: { button_pressed: "no" },
+    reducers: {
+        click: (state) => {
+            if (state.button_pressed === "yes") { state.button_pressed = "no" }
+            else { state.button_pressed = "yes" }
             return state
+        }
     }
-}
+})
+
+
+export default slice

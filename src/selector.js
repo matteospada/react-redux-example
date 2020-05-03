@@ -1,1 +1,3 @@
-export const getState = store => store
+export function mapStateToProps(state) {
+    return state
+  }
